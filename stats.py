@@ -13,3 +13,20 @@ def get_num_char(text):
         else:
             chars[char] = 1
     return chars
+
+def sorted_list(chars):
+    output = []
+    for key in chars:
+        num = chars[key]
+        item = {}
+        item["char"] = key
+        item["num"] = num
+
+        if key.isalpha():
+            output.append(item)
+
+    output.sort(key=sort_on, reverse=True)
+    return output
+
+def sort_on(element):
+    return element["num"]
